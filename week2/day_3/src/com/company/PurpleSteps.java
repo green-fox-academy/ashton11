@@ -6,20 +6,17 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class HorizontalLines {
+public class PurpleSteps {
     public static void mainDraw(Graphics graphics) {
-        // Create a line drawing function that takes 3 parameters:
-        // The x and y coordinates of the line's starting point and the graphics
-        // and draws a 50 long horizontal line from that point.
-        // Draw 3 lines with that function. Use loop for that.
-        int x = 30;
-        int y = 60;
-        int xplus = 50;
-        int change = 100;
-        for (int i = 0; i < 3; i++) {
-            graphics.drawLine(x , y , (x + xplus) , y );
-            x += change;
-            y += change;
+        // Reproduce this:
+        // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps/r3.png]
+        for (int i = 0; i < WIDTH/8 ; i++) {
+            for (int j = 0; j < HEIGHT/8 ; j++) {
+                graphics.setColor(Color.MAGENTA);
+                if (i == j) {
+                    graphics.fillRect(j * 40, i * 40, 40, 40);
+                }
+            }
         }
 
 

@@ -1,26 +1,28 @@
 package com.company;
 
+import com.sun.org.apache.xalan.internal.xsltc.util.IntegerArray;
+import sun.plugin2.util.ColorUtil;
+
 import javax.swing.*;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class HorizontalLines {
+public class RainbowBoxFunction {
     public static void mainDraw(Graphics graphics) {
-        // Create a line drawing function that takes 3 parameters:
-        // The x and y coordinates of the line's starting point and the graphics
-        // and draws a 50 long horizontal line from that point.
-        // Draw 3 lines with that function. Use loop for that.
-        int x = 30;
-        int y = 60;
-        int xplus = 50;
-        int change = 100;
-        for (int i = 0; i < 3; i++) {
-            graphics.drawLine(x , y , (x + xplus) , y );
-            x += change;
-            y += change;
-        }
+        // Create a square drawing function that takes 3 parameters:
+        // The square size, the fill color, graphics
+        // and draws a square of that size and color to the center of the canvas.
+        // Create a loop that fills the canvas with rainbow colored squares.
+
+        /*rainbowSquare(size,colour,graphics);
+
+    }
+    public static void rainbowSquare(int s2, C colorchanger , Graphics g2){
+
+        g2.drawRect((WIDTH-s2)/2 , (HEIGHT-s2)/2 , s2 , s2 );*/
 
 
     }

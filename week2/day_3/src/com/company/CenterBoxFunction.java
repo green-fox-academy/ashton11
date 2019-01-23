@@ -6,23 +6,25 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class HorizontalLines {
-    public static void mainDraw(Graphics graphics) {
-        // Create a line drawing function that takes 3 parameters:
-        // The x and y coordinates of the line's starting point and the graphics
-        // and draws a 50 long horizontal line from that point.
-        // Draw 3 lines with that function. Use loop for that.
-        int x = 30;
-        int y = 60;
-        int xplus = 50;
-        int change = 100;
+public class CenterBoxFunction {
+
+    public static void mainDraw(Graphics graphics){
+        // create a square drawing function that takes 2 parameter:
+        // the square size and the graphics
+        // and draws a square of that size to the center of the canvas.
+        // draw 3 squares with that function.
+        // avoid code duplication.
+        int s = 80;
         for (int i = 0; i < 3; i++) {
-            graphics.drawLine(x , y , (x + xplus) , y );
-            x += change;
-            y += change;
+            s = s/2;
+            midSquare(s, graphics);
+
         }
 
 
+    }
+    public static void midSquare(int size, Graphics drawMidSquare){
+        drawMidSquare.drawRect((WIDTH  - size )/ 2, (HEIGHT  - size )/ 2, size, size);
     }
 
     // Don't touch the code below
