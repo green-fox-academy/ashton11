@@ -43,9 +43,14 @@ public class StudentCounter {
         row5.put("candies", 2);
         listOfMaps.add(row5);
 
-
     }
+}
+
+
+
+
+
         // Display the following things:
         //  - Who has got more candies than 4
         //  - Sum the age of people who have less than 5 candies
-}
+

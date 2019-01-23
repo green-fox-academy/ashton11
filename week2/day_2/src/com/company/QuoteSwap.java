@@ -19,7 +19,9 @@ public class QuoteSwap{
         String change = quote.get(2).toString();
         quote.set(2 , quote.get(5));
         quote.set(5 , change);
-        System.out.println(quote.toString());
+        for (int i = 0; i < quote.size(); i++) {
+            System.out.print(quote.get(i) + " ");
+        }
     return quote;
     }
 }
