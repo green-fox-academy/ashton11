@@ -16,14 +16,32 @@ public class RainbowBoxFunction {
         // The square size, the fill color, graphics
         // and draws a square of that size and color to the center of the canvas.
         // Create a loop that fills the canvas with rainbow colored squares.
-
-        /*rainbowSquare(size,colour,graphics);
+        Color red = new Color(255 , 0 , 0 );
+        Color orange = new Color(255 , 127, 0 );
+        Color yellow = new Color(255 , 255 , 0 );
+        Color green = new Color(0 , 255 , 0 );
+        Color blue = new Color(0 , 0 , 255 );
+        Color indigo = new Color(75 , 0 , 130 );
+        Color violet = new Color(148 , 0 , 211 );
+        Color colorchanger [] = { red , orange , yellow , green , blue , indigo , violet };
+        int size = 160;
+        rainbowSquare(size,colorchanger,graphics);
 
     }
-    public static void rainbowSquare(int s2, C colorchanger , Graphics g2){
+    public static void rainbowSquare(int s2, Color [] color , Graphics g2){
 
-        g2.drawRect((WIDTH-s2)/2 , (HEIGHT-s2)/2 , s2 , s2 );*/
+        int x = 0 ;
+        int y = 0 ;
+        int s3 = WIDTH;
+        int s4 = 1;
 
+        for (int i = 0; i < color.length ; i++) {
+            g2.setColor(color[i]);
+            g2.fillRect(x, y, s3 , s3);
+            x += (WIDTH-s2)/14;
+            y += (HEIGHT-s2)/14;
+            s3 -= (s2/(7*(s4)));
+        }
 
     }
 
