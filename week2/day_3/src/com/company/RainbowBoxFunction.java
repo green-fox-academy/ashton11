@@ -24,7 +24,7 @@ public class RainbowBoxFunction {
         Color indigo = new Color(75 , 0 , 130 );
         Color violet = new Color(148 , 0 , 211 );
         Color colorchanger [] = { red , orange , yellow , green , blue , indigo , violet };
-        int size = 160;
+        int size = 14;
         rainbowSquare(size,colorchanger,graphics);
 
     }
@@ -33,14 +33,15 @@ public class RainbowBoxFunction {
         int x = 0 ;
         int y = 0 ;
         int s3 = WIDTH;
-        int s4 = 1;
+
 
         for (int i = 0; i < color.length ; i++) {
             g2.setColor(color[i]);
             g2.fillRect(x, y, s3 , s3);
             x += (WIDTH-s2)/14;
             y += (HEIGHT-s2)/14;
-            s3 -= (s2/(7*(s4)));
+            s3 -= (WIDTH-s2)/7;
+
         }
 
     }
