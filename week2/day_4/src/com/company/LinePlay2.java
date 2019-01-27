@@ -11,23 +11,44 @@ public class LinePlay2 {
     public static void mainDraw(Graphics LinePlay) {
         int pointSpace = 16;
         int numberOfLines = WIDTH/pointSpace;
+        int divider = 2;
         int starter = 0;
 
-        lineDrawing(starter , numberOfLines , pointSpace , LinePlay);
-    }
+        /*for (int i = 0; i < divider ; i++) {
+            for (int j = 0; j < divider ; j++) {
+                int ender = (WIDTH/divider)*i;
+                */
+        lineDrawing(starter, numberOfLines, pointSpace, divider, LinePlay);
 
-    public static void lineDrawing (int starter , int pointspace , int numberoflines , Graphics graphics){
-        for (int i = 0; i <= numberoflines ; i++) {
-            graphics.setColor(Color.GREEN);
-            int pointchange = pointspace*i;
-            graphics.drawLine(starter , pointchange , pointchange , WIDTH);
-        }
-        for (int i = 0; i <= numberoflines; i++) {
-            graphics.setColor(Color.magenta);
-            int pointchange = pointspace*i;
-            graphics.drawLine( WIDTH, pointchange , pointchange , starter );
+
         }
 
+
+
+
+
+
+    public static void lineDrawing (int starter ,  int pointspace , int numberoflines , int divider , Graphics graphics){
+        int end = WIDTH/divider;
+        for (int k = 0; k < divider; k++) {
+            int Ychanger = end * k;
+            for (int i = 0; i < divider ; i++) {
+                int Xchanger = end * i;
+                for (int j = 0; j <= numberoflines; j++) {
+                    graphics.setColor(Color.GREEN);
+                    int pointSpaceChange = (pointspace / divider) * j;
+                    graphics.drawLine(starter + Xchanger, pointSpaceChange + Ychanger, pointSpaceChange + Xchanger, end + Ychanger);
+                }
+                for (int j = 0; j <= numberoflines; j++) {
+                    graphics.setColor(Color.magenta);
+                    int pointSpaceChange = (pointspace / divider) * j;
+                    graphics.drawLine(end + Ychanger, pointSpaceChange + Xchanger, pointSpaceChange + Ychanger, starter + Xchanger);
+                }
+
+            }
+
+
+        }
     }
 
 
