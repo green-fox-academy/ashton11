@@ -22,7 +22,7 @@ public class WriteALotOfLines {
         System.out.println("How many times would you like to copy it: ");
         int copies = scanner.nextInt();
         loadOfLines(pathToFile,word,copies);
-        
+
     }
     public static void loadOfLines (Path fileToWriteTo , String wordToWrite , int numberOfLinesToWrite){
             List<String> file = new ArrayList<>();
