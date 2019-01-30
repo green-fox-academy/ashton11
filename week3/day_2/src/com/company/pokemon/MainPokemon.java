@@ -19,10 +19,10 @@ public class MainPokemon {
 
 
         System.out.print("I choose you, ");
-        for (int i = 0; i < pokemonOfAsh.size(); i++){
-            boolean answer = pokemonOfAsh.get(i).isEffectiveAgainst(wildPokemon);
-            if (answer = true){
-                System.out.println(pokemonOfAsh.get(i));
+        for (Pokemon ashesPokemons:pokemonOfAsh){
+            boolean answer = ashesPokemons.isEffectiveAgainst(wildPokemon);
+            if (answer == true){
+                System.out.println(ashesPokemons.name);
             }
 
         }
