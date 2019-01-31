@@ -11,13 +11,10 @@ public class LinePlay2 {
     public static void mainDraw(Graphics LinePlay) {
         int pointSpace = 16;
         int numberOfLines = WIDTH/pointSpace;
-        int divider = 2;
+        int divider = 8;
         int starter = 0;
 
-        /*for (int i = 0; i < divider ; i++) {
-            for (int j = 0; j < divider ; j++) {
-                int ender = (WIDTH/divider)*i;
-                */
+
         lineDrawing(starter, numberOfLines, pointSpace, divider, LinePlay);
 
 

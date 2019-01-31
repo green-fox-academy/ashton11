@@ -8,29 +8,27 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class TriangleDraw {
 
-    public static void mainDra(Graphics triangle) {
+    public static void mainDraw(Graphics triangle) {
+        int numberOfLines = 16;
         int xleft = 80;
-        int yleft = HEIGHT;
-        int xmid = 160;
-        int ymid = 160;
+        int topPoint = WIDTH/2;
         int xright = 240;
-        int yright = HEIGHT;
-        drawLineLeftToRight(xmid, ymid, xright, yright, triangle);
-        drawLineRightToLeft(xmid, ymid, xleft, yleft, triangle);
+
+        drawLineLeftToRight(topPoint, numberOfLines, xleft, xright, triangle);
+        //drawLineRightToLeft(topPoint, xright, xleft, triangle);
     }
 
-    public static void drawLineLeftToRight(int xmid, int ymid, int xleft, int yright, Graphics g) {
-        for (int i = 0; i < 10; i++) {
+    public static void drawLineLeftToRight(int topPoint , int numberOfLines, int xleft , int xright , Graphics g) {
+        for (int i = 0; i < numberOfLines ; i++) {
+            int topChanger =topPoint/numberOfLines;
             g.setColor(Color.BLUE);
-            g.drawLine(xmid, ymid, xleft, yright);
-            xmid += 16;
-            ymid += 16;
-            xleft += 8;
+            g.drawLine( xleft + topChanger*i, WIDTH  , xright + (topChanger/2)*i ,topPoint - (topChanger/2)*i);
+
 
         }
     }
 
-    public static void drawLineRightToLeft(int xmid, int ymid, int xright, int yright, Graphics g) {
+    /*public static void drawLineRightToLeft(int xmid, int ymid, int xright, int yright, Graphics g) {
         for (int i = 0; i < 10; i++) {
             g.setColor(Color.RED);
             g.drawLine(xmid, ymid, xright, yright);
@@ -40,7 +38,7 @@ public class TriangleDraw {
         }
 
 
-    }
+    }*/
 
     static int WIDTH = 320;
     static int HEIGHT = 320;
@@ -60,7 +58,7 @@ public class TriangleDraw {
         @Override
         protected void paintComponent(Graphics graphics) {
             super.paintComponent(graphics);
-            mainDra(graphics);
+            mainDraw(graphics);
         }
     }
 }
