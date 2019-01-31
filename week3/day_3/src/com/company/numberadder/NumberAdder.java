@@ -2,7 +2,7 @@ package com.company.numberadder;
 
 public class NumberAdder {
     public static void main(String[] args) {
-        int n = 3;
+        int n = 3   ;
         System.out.println(numberAdder(n));
     }
 
