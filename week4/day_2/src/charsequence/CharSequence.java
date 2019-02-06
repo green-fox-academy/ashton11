@@ -8,7 +8,7 @@ public interface CharSequence {
     char charAt(int index);
 
 
-    char[] subSequence(int start, int end);
+    java.lang.CharSequence subSequence(int start, int end);
 
 
     String toString();

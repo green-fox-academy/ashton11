@@ -1,7 +1,5 @@
 package charsequence;
 
-import com.sun.xml.internal.fastinfoset.util.CharArray;
-
 public class Gnirts implements CharSequence{
 
 
@@ -21,17 +19,17 @@ public class Gnirts implements CharSequence{
 
     @Override
     public char charAt(int index) {
-        int oppositeIndex = this.string.length() - index;
-        return this.string.charAt(oppositeIndex - 1);
+        int oppositeIndex = string.length() - index;
+        return string.charAt(oppositeIndex - 1);
     }
 
     @Override
-    public char[] subSequence(int start, int end) {
+    public java.lang.CharSequence subSequence(int start, int end) {
          String beforeStart = ((String)string.subSequence(0,start));
          String afterEnd = ((String)string.subSequence(end,string.length()));
 
-        String s = beforeStart + afterEnd;
+        String newString = beforeStart + afterEnd;
 
-        return s.toCharArray();
+        return newString.subSequence(0,newString.length());
     }
 }
