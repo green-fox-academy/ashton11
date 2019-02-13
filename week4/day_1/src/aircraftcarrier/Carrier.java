@@ -38,8 +38,8 @@ public class Carrier {
         for (Aircrafts aircraft : hangar) {
             if (carrierToFight.hp > 0) {
                 aircraft.setDamage();
-                aircraft.fight();
                 carrierToFight.hp -= aircraft.getDamage();
+                aircraft.fight();
             }
         }
     }
@@ -54,10 +54,15 @@ public class Carrier {
     }
 
     public void getStatus(){
+        if (hp > 0){
         System.out.println("HP: " + hp + " Aircraft count: " + hangar.size() + " Ammo Storage: " + ammoStore +
                 " Total Damage: " + getHangarDamage());
         for (Aircrafts aircraft : hangar) {
-          aircraft.getStatus();
+            aircraft.getStatus();
+        }
+        }else{
+                System.out.println("It's dead Jim :(");
+
         }
     }
 }
