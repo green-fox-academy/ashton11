@@ -1,4 +1,4 @@
-package instruments;
+package main.java.music;
 
 public abstract class Instruments {
 

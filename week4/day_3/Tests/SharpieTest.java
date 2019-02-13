@@ -35,7 +35,7 @@ public class SharpieTest {
         Sharpie sharp = new Sharpie("green" , 10f);
         sharp.use(100f);
         sharp.checkInkAmount();
-        
+
         }
     }
 }
