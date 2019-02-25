@@ -17,7 +17,7 @@ public class Main {
         carrier.fight(carrier1);
         carrier1.getStatus();
         carrier.getStatus();
-        
+
 
 
     }
