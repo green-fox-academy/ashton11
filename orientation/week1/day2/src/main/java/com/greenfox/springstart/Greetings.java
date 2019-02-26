@@ -1,7 +1,6 @@
 package com.greenfox.springstart;
 
 
-import java.util.concurrent.atomic.AtomicLong;
 
 public class Greetings {
     long id;
