@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+    <table>
+        <tr>
+            <th rowspan="3">Simba Mans Account</th>
+        </tr>
+        <tr>
+            <td th:text="${SimAcc.name}"/>
+            <td th:text="${#numbers.formatDecimal(SimAcc.balance, 1, 2, 'POINT') + ' Zebra'} "/>
+            <td th:text="${SimAcc.animalType}"/>
+        </tr>
+    </table>
+
+</body>
+</html>
