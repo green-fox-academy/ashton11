@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>ye goo' olde webshop</title>
+    <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+<div id="BigBox">
+    <header>
+        My Shop
+        <hr style="background-color: skyblue">
+    </header>
+    <div id="NavBar">
+    <nav>
+        <a href="/onlyavailable" id="FirstNavTag">
+            ONLY AVAILABLE
+        </a>
+        <a href="/cheapestfirst" class="MiddleNavTag">
+            CHEAPEST FIRST
+        </a>
+        <a href="/containsnike" class="MiddleNavTag">
+            CONTAINS NIKE
+        </a>
+        <a href="/averagestock" class="MiddleNavTag">
+            AVERAGE STOCK
+        </a>
+        <a href="/mostexpensive" id="LastNavTag">
+            MOST EXPENSIVE AVAILABLE
+        </a>
+    </nav>
+    </div>
+    <table>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Quantity of stock</th>
+        <tr th:each="item : ${items}">
+            <td th:text="item.getName()"></td>
+            <td th:text="item.getDescription()"></td>
+            <td th:text="item.getPrice() + '.0 Kč'"></td>
+            <td th:text="item.getAmountInStock()"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
