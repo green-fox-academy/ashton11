@@ -9,26 +9,33 @@
 <div id="BigBox">
     <header>
         My Shop
-        <hr style="background-color: skyblue">
+        <hr>
     </header>
-    <div id="NavBar">
-    <nav>
-        <a href="/onlyavailable" id="FirstNavTag">
-            ONLY AVAILABLE
-        </a>
-        <a href="/cheapestfirst" class="MiddleNavTag">
-            CHEAPEST FIRST
-        </a>
-        <a href="/containsnike" class="MiddleNavTag">
-            CONTAINS NIKE
-        </a>
-        <a href="/averagestock" class="MiddleNavTag">
-            AVERAGE STOCK
-        </a>
-        <a href="/mostexpensive" id="LastNavTag">
-            MOST EXPENSIVE AVAILABLE
-        </a>
-    </nav>
+    <div >
+        <nav id="NavBar">
+            <a href="/onlyavailable">
+                ONLY AVAILABLE
+            </a>
+            <a href="/cheapestfirst">
+                CHEAPEST FIRST
+            </a>
+            <a href="/containsnike">
+                CONTAINS NIKE
+            </a>
+            <a href="/averagestock">
+                AVERAGE STOCK
+            </a>
+            <a href="/mostexpensive">
+                MOST EXPENSIVE AVAILABLE
+            </a>
+        </nav>
+    </div>
+    <div id="SearchBar">
+        <form>
+            <label>Search for:</label>
+            <input type="search " name="searched"/>
+            <input type="submit" action="/search" method="post"  />
+        </form>
     </div>
     <table>
         <th>Name</th>
@@ -36,10 +43,10 @@
         <th>Price</th>
         <th>Quantity of stock</th>
         <tr th:each="item : ${items}">
-            <td th:text="item.getName()"></td>
-            <td th:text="item.getDescription()"></td>
-            <td th:text="item.getPrice() + '.0 Kč'"></td>
-            <td th:text="item.getAmountInStock()"></td>
+            <td th:text="${item.getName()}"></td>
+            <td th:text="${item.getDescription()}"></td>
+            <td th:text="${item.getPrice()} + '.0 Kč'"></td>
+            <td th:text="${item.getAmountInStock()}"></td>
         </tr>
     </table>
 </div>

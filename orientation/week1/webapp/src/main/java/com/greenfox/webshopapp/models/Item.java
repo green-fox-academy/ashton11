@@ -1,6 +1,6 @@
 package com.greenfox.webshopapp.models;
 
-public class Items {
+public class Item {
     String name;
     String description;
     int price;
@@ -39,7 +39,7 @@ public class Items {
         this.amountInStock = amountInStock;
     }
 
-    public Items(String name, String description, int price, int amountInStock){
+    public Item(String name, String description, int price, int amountInStock){
         this.name = name;
         this.amountInStock = amountInStock;
         this.description = description;

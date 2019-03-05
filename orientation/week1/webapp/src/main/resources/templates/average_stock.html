@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>ye goo' olde webshop</title>
+    <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
-$END$
+<div id="BigBox">
+    <header>
+        My Shop
+        <hr>
+    </header>
+    <div >
+        <nav id="NavBar">
+            <a href="/onlyavailable">
+                ONLY AVAILABLE
+            </a>
+            <a href="/cheapestfirst">
+                CHEAPEST FIRST
+            </a>
+            <a href="/containsnike">
+                CONTAINS NIKE
+            </a>
+            <a href="/averagestock">
+                AVERAGE STOCK
+            </a>
+            <a href="/mostexpensive">
+                MOST EXPENSIVE AVAILABLE
+            </a>
+        </nav>
+    </div>
+    <div id="SearchBar">
+        <form>
+            <label>Search for:</label>
+            <input type="search" name="searched"/>
+            <input type="submit" action="/search" method="post"   />
+        </form>
+    </div>
+    <h1 th:text="'Average Stock: ' + ${items}"/>
+</div>
 </body>
 </html>

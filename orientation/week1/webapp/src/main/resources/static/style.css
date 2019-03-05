@@ -1,0 +1,62 @@
+#BigBox{
+    display: block;
+    width: 1000px;
+    height: 2000px;
+    float: none;
+}
+#NavBar{
+    margin: 0 10%;
+    display: block;
+    width: 100%;
+    float: none;
+}
+header{
+    margin: 0 10%;
+    color: skyblue;
+    width: 80% ;
+    font-size: 40px;
+}
+#NavBar a{
+    margin: 0 2% 4% 0;
+    padding: 0.5%;
+    font-size: 14px;
+    background: red;
+    border-radius: 2px;
+    text-decoration: none;
+    color: white;
+}
+table{
+    margin: 10% 10%;
+    width: 80%;
+}
+th {
+    padding: 3.75%;
+    color: black;
+    background-color: skyblue;
+    border: 1px solid white;
+    font-size: 18px;
+}
+td{
+    padding: 3.75%;
+}
+td:nth-child(3),td:nth-child(4){
+    font-style: italic;
+}
+#SearchBar{
+    margin: 4% 10%;
+    width: 100%;
+    float: left;
+}
+#SearchBar label{
+    display: block;
+}
+#SearchBar input{
+    border-radius: 3px;
+}
+hr{
+    background-color: skyblue;
+    margin: 0 0 5% 0;
+}
+h1{
+    margin: 10%;
+}
