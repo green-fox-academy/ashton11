@@ -41,6 +41,6 @@ public class Con_Thriller {
     @RequestMapping("/lotsOfAccs")
     public String showThemAccounts(Model model){
         model.addAttribute("lionList", accounts);
-        return
+        return "list_of_accounts";
     }
 }
