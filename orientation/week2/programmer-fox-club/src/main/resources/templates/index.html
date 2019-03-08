@@ -6,10 +6,10 @@
 </head>
 <body>
 <ul>
-    <li><a href="/info">Information</a> </li>
+    <li><a href="/">Information</a> </li>
 </ul>
 <img style="display: block" src="/assets/greenfox.png"/>
-<span>This is Mr.Fox. Currently living on pizza and lemonade. He knows 2 tricks.</span>
+<span th:text = "|This is ${name}. Currently living on pizza and lemonade. He knows 2 tricks.|"/>
 <h1>Known Tricks</h1>
 <ul>
     <li>Write HTML</li>

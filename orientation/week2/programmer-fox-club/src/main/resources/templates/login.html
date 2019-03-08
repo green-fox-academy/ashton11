@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Login</title>
 </head>
 <body>
-
+<h1>Welcome to Programmer Fox Club!</h1>
+<p>Please provide a name, so you can associate it to your pet!</p>
+<form th:method="POST"  th:action="'/'">
+<label>Name</label>
+<input type="text" name="nameSetterForFox"/>
+    <button type="submit">Name Of Fox</button>
+</form>
 </body>
 </html>
