@@ -8,6 +8,8 @@ import com.greenfox.webshopapp.models.ItemPriceComparator;
 import com.greenfox.webshopapp.models.MostExpensiveItem;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -42,8 +44,8 @@ public class WebShopController {
         model.addAttribute("items", itemList.getItemList());
         return "web_shop_front";
     }
-    @RequestMapping(value = "/search")
-    public String search(Model model, @RequestParam String searched){
+    @GetMapping(value ="/search")
+    public String search(Model model, @RequestParam("searched") String searched){
         model.addAttribute("items", itemList.searchedFor(searched));
         return "web_shop_front";
     }

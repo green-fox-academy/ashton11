@@ -1,4 +1,10 @@
-package PACKAGE_NAME;
+public class BlackPlayer extends Player {
+    public BlackPlayer(){
+        super.wins = false;
+    }
 
-public class BlackPlayer {
+    public boolean isWinner() {
+        super.wins = true;
+        return wins;
+    }
 }

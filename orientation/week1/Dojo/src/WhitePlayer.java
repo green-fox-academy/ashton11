@@ -1,4 +1,12 @@
-package PACKAGE_NAME;
+public class WhitePlayer extends Player {
 
-public class WhitePlayer {
+        public WhitePlayer(){
+            super.wins = false;
+        }
+
+        public boolean isWinner() {
+            super.wins = true;
+            return wins;
+        }
+
 }

@@ -19,6 +19,7 @@ public class Con_Thriller {
         accounts.add(new BankAccount("Nala", 1500, "Lion"));
         accounts.add(new BankAccount("Mufasa", 2300, "Lion"));
         accounts.add(new BankAccount("Sarabi", 1230, "Lion"));
+        theLionKingsAccount.setKing(true);
         accounts.add(theLionKingsAccount);
         accounts.add(new BankAccount("Sarafina", 980, "Lion"));
     }

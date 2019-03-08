@@ -5,11 +5,19 @@
     <link rel="stylesheet" th:href="@{/style.css}" />
     <title>List Of Accounts</title>
 </head>
-<body>
+<body >
     <table th:each = "account:${lionList}">
-        <td th:text = "${ accountStat.index +' '+ account.name}"/>
-        <td th:text = "${account.balance}"/>
-        <td th:text = "${account.animalType}"/>
+        <tr th:if="${account.king}" id="king">
+            <td th:text = "${accountStat.index +' '+ account.name}"/>
+            <td th:text = "${account.balance}"/>
+            <td th:text = "${account.animalType}"/>
+        </tr>
+        <tr th:if = "${not account.king}" id="notking">
+            <td th:text = "${ accountStat.index +' '+ account.name}"/>
+            <td th:text = "${account.balance}"/>
+            <td th:text = "${account.animalType}"/>
+        </tr>
+
     </table>
 </body>
 </html>

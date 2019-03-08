@@ -43,10 +43,10 @@
         <th>Price</th>
         <th>Quantity of stock</th>
         <tr th:each="item : ${items}">
-            <td th:text="${item.getName()}"></td>
-            <td th:text="${item.getDescription()}"></td>
-            <td th:text="${item.getPrice()} + '.0 Kč'"></td>
-            <td th:text="${item.getAmountInStock()}"></td>
+            <td th:text="${item.name}"></td>
+            <td th:text="${item.description}"></td>
+            <td th:text="${item.price} + '.0 Kč'"></td>
+            <td th:text="${item.amountInStock}"></td>
         </tr>
     </table>
 </div>

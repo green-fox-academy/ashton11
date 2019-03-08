@@ -1,0 +1,23 @@
+body {
+    background: gray;
+}
+form {
+    float: none;
+    display: block;
+    width: 400px;
+    height: min-content;
+    background: white;
+    align: center;
+}
+form p {
+    text-align: center;
+}
+input {
+    margin: 20px 20px;
+    display: block;
+    float: left;
+}
+label {
+    font-size: 10px;
+    text-align: left;
+}

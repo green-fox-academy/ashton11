@@ -29,8 +29,8 @@ public class ItemList {
 
     public List<Item> searchedFor(String searchingFor) {
         return itemList.stream()
-                .filter(item -> item.getName().contains(searchingFor) ||
-                        item.getDescription().contains(searchingFor))
+                .filter(item -> item.getName().toLowerCase().contains(searchingFor.toLowerCase()) ||
+                        item.getDescription().contains(searchingFor.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
