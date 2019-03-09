@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inhabitant filtered by ID</title>
+</head>
+<body>
+<span th:if="${error}" th:text="${error}"/>
+<div th:unless="${error}" th:object="${filteredInhabitant}">
+    <h1 th:text="*{id}"/>
+    <h1 th:text="*{name}"/>
+    <h2 th:text="*{age}"/>
+    <h3 th:text="*{gender}"/>
+</div>
+
+</body>
+</html>

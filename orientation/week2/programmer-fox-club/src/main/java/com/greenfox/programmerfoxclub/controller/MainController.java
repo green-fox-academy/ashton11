@@ -10,27 +10,24 @@ import org.springframework.web.bind.annotation.*;
 
 @org.springframework.stereotype.Controller
 public class MainController {
-    private ListOfFoxes listOfFoxes;
-    public MainController(){
-         listOfFoxes = new ListOfFoxes();
-    }
+
+
 
     @RequestMapping(value = "/")
-    public String mainPage(Model model,@RequestParam(name = "nameSetterForFox", defaultValue = "Mr.Fox") String name){
-        model.addAttribute("name", name);
-        System.out.println(listOfFoxes.getFoxes());
+    public String mainPage(@ModelAttribute Fox fox){
+
+        System.out.println(fox.getName());
         return "index";
     }
 
     @GetMapping(value = "/login")
-    public String loginPage(){
+    public String loginPage(Model model){
+        model.addAttribute("fox", new Fox());
         return "login";
     }
 
     @PostMapping(value = "/login")
-    public String loginToMain(Model model,@RequestParam(name = "nameSetterForFox", defaultValue = "Mr.Fox") String name){
-        listOfFoxes.addFoxes(new Fox(name));
-        model.addAttribute("name", name);
+    public String loginToMain(@ModelAttribute Fox fox){
         return "index";
     }
 }

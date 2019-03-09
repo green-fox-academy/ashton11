@@ -7,10 +7,16 @@
 <body>
 <h1>Welcome to Programmer Fox Club!</h1>
 <p>Please provide a name, so you can associate it to your pet!</p>
-<form th:method="POST"  th:action="'/'">
-<label>Name</label>
-<input type="text" name="nameSetterForFox"/>
-    <button type="submit">Name Of Fox</button>
+<form action="#" method="POST"  th:action="@{/}" th:object="${fox}">
+    <label>Name</label>
+    <input type="text" th:field="*{name}"/>
+    <label>Favorite food</label>
+    <select name="FavFood" th:field="*{food}">
+        <option value="Pizza">Pizza</option>
+        <option value="Hot Wings">Hot Wings</option>
+        <option value="Hamburger">Hamburger</option>
+    </select>
+    <button type="submit">Create a fox</button>
 </form>
 </body>
 </html>

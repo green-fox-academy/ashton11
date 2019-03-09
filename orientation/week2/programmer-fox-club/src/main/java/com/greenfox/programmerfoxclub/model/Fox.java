@@ -22,6 +22,30 @@ public class Fox {
         this.food = null;
     }
 
+    public List<Tricks> getTricks() {
+        return tricks;
+    }
+
+    public void setTricks(List<Tricks> tricks) {
+        this.tricks = tricks;
+    }
+
+    public String getFood() {
+        return food;
+    }
+
+    public void setFood(String food) {
+        this.food = food;
+    }
+
+    public String getDrink() {
+        return drink;
+    }
+
+    public void setDrink(String drink) {
+        this.drink = drink;
+    }
+
     public String getName() {
         return name;
     }
