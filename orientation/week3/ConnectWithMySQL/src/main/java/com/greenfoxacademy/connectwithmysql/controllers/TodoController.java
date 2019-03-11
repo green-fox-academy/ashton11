@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class TodoController {
@@ -24,4 +25,13 @@ public class TodoController {
         return "todolist";
         //return "This is my first Todo";
     }
+
+    @RequestMapping(value = "todo/searched")
+    public String getActive(Model model, @RequestParam(name = "isActive") boolean isActive){
+        System.out.println(todoRepository.findByDone(isActive));
+        model.addAttribute("Todos", todoRepository.findByDone(!isActive));
+        return "todolist";
+    }
+
+    @RequestMapping(value = "")
 }
