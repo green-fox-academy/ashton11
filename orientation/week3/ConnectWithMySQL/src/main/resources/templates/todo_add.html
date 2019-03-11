@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Todo</title>
+</head>
+<body>
+<form action="#" th:action="@{/todo/add}" method="POST" th:object="${Todo}">
+    <label>Title of Todo</label>
+    <input type="text" th:field="*{title}">
+    <ul>
+        <li th:each="radioValue:${radioOptions}">
+            <input type="radio" th:value="${radioValue}" th:field="*{urgent}"/>
+            <label th:for="${#ids.prev('urgent')}" th:text="${radioValue}"/>
+        </li>
+    </ul>
+    <button type="submit">Add Todo</button>
+    <button type="reset">Reset Todo</button>
+</form>
+
+</body>
+</html>

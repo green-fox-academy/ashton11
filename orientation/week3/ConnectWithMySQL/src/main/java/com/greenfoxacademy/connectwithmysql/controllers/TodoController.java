@@ -1,12 +1,15 @@
 package com.greenfoxacademy.connectwithmysql.controllers;
 
+import com.greenfoxacademy.connectwithmysql.models.Todo;
 import com.greenfoxacademy.connectwithmysql.repositories.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 @Controller
 public class TodoController {
@@ -28,10 +31,21 @@ public class TodoController {
 
     @RequestMapping(value = "todo/searched")
     public String getActive(Model model, @RequestParam(name = "isActive") boolean isActive){
-        System.out.println(todoRepository.findByDone(isActive));
         model.addAttribute("Todos", todoRepository.findByDone(!isActive));
         return "todolist";
     }
 
-    @RequestMapping(value = "")
+    @GetMapping(value = "todo/add")
+    public String addTodo(Model model){
+        model.addAttribute("Todo", new Todo());
+        model.addAttribute("radioOptions", new ArrayList<>(Arrays.asList("true", "false")));
+        return "todo_add";
+    }
+
+    @PostMapping(value = "todo/add")
+    public String postAddTodo(@ModelAttribute(name = "Todo")Todo todo){
+        System.out.println(todo);
+        todoRepository.save(todo);
+        return "redirect:/todo/list";
+    }
 }
