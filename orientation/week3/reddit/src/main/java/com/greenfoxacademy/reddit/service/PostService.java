@@ -27,7 +27,7 @@ public class PostService {
 
   public void upvotePost(int id){
     Post actPost = postRepository.findById(id).get();
-    actPost.setVotes((actPost.getVotes()+1));
+    actPost.setVotes((actPost.getVotes() + 1));
     postRepository.deleteById(id);
     postRepository.save(actPost);
   }
