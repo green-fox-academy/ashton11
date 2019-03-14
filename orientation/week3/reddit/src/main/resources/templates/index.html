@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Main Page</title>
 </head>
 <body>
-
+<a href="/submit">Add new post</a>
+<a href="/login">Login</a>
+<h2>Trending Posts</h2>
+<table>
+    <tr>
+        <th>Votes</th>
+        <th>Upvote</th>
+        <th>Downvote</th>
+        <th>Post titles</th>
+    </tr>
+    <tr th:each="post:${posts}">
+        <td th:text="${post.votes}"></td>
+        <td>
+            <form action="#" th:action="@{|/upvote/${post.id}|}" th:method="post"></form>
+            <button type="submit">+</button>
+        </td>
+        <td>
+            <form action="#" th:action="@{|/downvote/${post.id}|}"></form>
+            <button type="submit">-</button>
+        </td>
+        <td th:text="${post.title}"/>
+    </tr>
+</table>
 </body>
 </html>
