@@ -13,12 +13,7 @@ public class User {
   private String username;
   private String password;
   private String name;
-  private PostService postService;
 
-  @Autowired
-  public User(PostService postService) {
-    this.postService = postService;
-  }
 
   public User() {
   }
