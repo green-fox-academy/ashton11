@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 public class Post {
@@ -14,6 +15,7 @@ public class Post {
   private String title;
   private String text;
   private int votes;
+  private Date postTime;
 
   public Post() {
   }
@@ -48,5 +50,13 @@ public class Post {
 
   public void setVotes(int votes) {
     this.votes = votes;
+  }
+
+  public Date getPostTime() {
+    return postTime;
+  }
+
+  public void setPostTime(Date postTime) {
+    this.postTime = postTime;
   }
 }
