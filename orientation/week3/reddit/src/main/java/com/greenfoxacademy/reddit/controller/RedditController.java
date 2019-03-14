@@ -29,12 +29,24 @@ public class RedditController {
   @GetMapping(value = "/login")
   public String getLoginPage(){
 
-    return "login";
+    return "login_page";
   }
 
   @PostMapping(value = "/login")
   public String postLoginPage(@RequestParam(name = "username") String username,
                               @RequestParam(name = "password") String password){
+    return "redirect:/main";
+  }
+
+  @GetMapping("/submit")
+  public String getSubmitPage(){
+
+    return "submit_page";
+  }
+
+  @PostMapping("/submit")
+  public String postAdding(){
+
     return "redirect:/main";
   }
 
