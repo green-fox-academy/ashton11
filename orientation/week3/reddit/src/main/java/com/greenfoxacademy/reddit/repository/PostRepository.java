@@ -1,4 +1,7 @@
 package com.greenfoxacademy.reddit.repository;
 
-public interface PostRepository {
+import com.greenfoxacademy.reddit.model.Post;
+import org.springframework.data.repository.CrudRepository;
+
+public interface PostRepository extends CrudRepository<Post, Integer> {
 }
