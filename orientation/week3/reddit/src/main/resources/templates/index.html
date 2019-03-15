@@ -25,7 +25,7 @@
             <form action="#" th:action="@{|/downvote/${post.id}|}"></form>
             <button type="submit">-</button>
         </td>
-        <td th:text="${post.title}"/>
+        <td><a th:text="${post.title}" th:href="@{|/post/${post.title}|}"/></td>
     </tr>
 </table>
 </body>
