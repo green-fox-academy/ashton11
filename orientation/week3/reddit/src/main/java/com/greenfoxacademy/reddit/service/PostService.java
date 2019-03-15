@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PostService {
@@ -21,14 +22,22 @@ public class PostService {
     postRepository.save(post);
   }
 
-  public List<Post> getAllPosts(){
-    return postRepository.findAllByOrderByVotes();
+  public Post getPostById(int id){
+    return postRepository.findById(id).get();
   }
 
-  public void upvotePost(int id){
+  public Post getPostByTitle(String title){
+    return postRepository.findByTitle(title);
+  }
+
+  public List<Post> getTop10TrendingPosts(){
+    return postRepository.findTop10ByOrderByVotes();
+  }
+
+  public void upvotePost(Integer id){
     Post actPost = postRepository.findById(id).get();
-    actPost.setVotes((actPost.getVotes() + 1));
-    postRepository.deleteById(id);
+    int upvotes = actPost.getVotes() + 1;
+    actPost.setVotes(upvotes);
     postRepository.save(actPost);
   }
 

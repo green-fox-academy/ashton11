@@ -9,5 +9,7 @@ import java.util.List;
 @Repository
 public interface PostRepository extends CrudRepository<Post, Integer> {
 
-  List<Post> findAllByOrderByVotes();
+  List<Post> findTop10ByOrderByVotes();
+
+  Post findByTitle(String title);
 }

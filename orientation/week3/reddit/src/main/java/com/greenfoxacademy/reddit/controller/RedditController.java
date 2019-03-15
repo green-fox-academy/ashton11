@@ -24,7 +24,7 @@ public class RedditController {
   public String getMainPage(@RequestParam(name = "username", required = false) String username,
                             @RequestParam(name = "password", required = false) String password,
                             Model model){
-    model.addAttribute("posts", postService.getAllPosts());
+    model.addAttribute("posts", postService.getTop10TrendingPosts());
     model.addAttribute("user", username);
     return "index";
   }
@@ -53,9 +53,15 @@ public class RedditController {
     return "redirect:/main";
   }
 
-  @PostMapping("/upvote/{id}")
-  public String upvotePost(@PathVariable(name = "id") int id){
+  @GetMapping("/upvote/{id}")
+  public String upvotePostGet(@PathVariable(name = "id") int id){
     postService.upvotePost(id);
     return "redirect:/main";
+  }
+
+  @GetMapping("/post/{title}")
+  public String getPostWithText(@PathVariable(name = "title")String title, Model model){
+    model.addAttribute("post",postService.getPostByTitle(title));
+    return "post_view";
   }
 }
