@@ -48,4 +48,16 @@ public class TodoController {
         todoRepository.save(todo);
         return "redirect:/todo/list";
     }
+
+    @GetMapping(value = "todo/{id}/delete")
+    public String deleteTodoCheck(Model model,@PathVariable(name = "id") String id){
+        model.addAttribute("id", id);
+        return "todo_delete";
+    }
+
+    @DeleteMapping(value = "todo/{id}/delete")
+    public String deleteTodo(@PathVariable(name = "id") String id){
+        todoRepository.deleteById(Long.valueOf(id));
+        return "redirect:/todo/list";
+    }
 }

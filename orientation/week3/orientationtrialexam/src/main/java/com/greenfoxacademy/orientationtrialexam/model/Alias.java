@@ -4,18 +4,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Random;
 
 @Entity
-public class Allias {
+public class Alias {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int id;
   private String url;
-  private String allias;
-  private int secretCode;
+  private String aliasName;
+  private String secretCode;
   private int hitCount;
 
-  public Allias() {
+  public Alias() {
+    this.secretCode = String.format( "%04d" ,  new Random().nextInt(10000));
   }
 
   public int getId() {
@@ -34,19 +36,19 @@ public class Allias {
     this.url = url;
   }
 
-  public String getAllias() {
-    return allias;
+  public String getAliasName() {
+    return aliasName;
   }
 
-  public void setAllias(String allias) {
-    this.allias = allias;
+  public void setAliasName(String aliasName) {
+    this.aliasName = aliasName;
   }
 
-  public int getSecretCode() {
+  public String getSecretCode() {
     return secretCode;
   }
 
-  public void setSecretCode(int secretCode) {
+  public void setSecretCode(String secretCode) {
     this.secretCode = secretCode;
   }
 
