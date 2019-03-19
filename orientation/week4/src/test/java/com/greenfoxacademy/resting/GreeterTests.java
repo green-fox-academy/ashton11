@@ -1,6 +1,6 @@
 package com.greenfoxacademy.resting;
 
-import com.greenfoxacademy.resting.controllers.DoubleController;
+import com.greenfoxacademy.resting.controllers.GreeterController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,33 +13,42 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 
-
 @RunWith(SpringRunner.class)
-@WebMvcTest(DoubleController.class)
-public class DoubleTests {
+@WebMvcTest(GreeterController.class)
+public class GreeterTests {
 
   @Autowired
-  private MockMvc mockMvc;
+  MockMvc mockMvc;
 
   @Test
-  public void numberDoubler_withInput5_returns10() throws Exception{
-    mockMvc.perform(get("/doubling?input=5")
-            .contentType(MediaType.APPLICATION_JSON_UTF8))
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
-            .andExpect(MockMvcResultMatchers.jsonPath("$.result")
-                    .value(10))
-            .andExpect(MockMvcResultMatchers.jsonPath("$.received")
-                    .value(5))
-            .andExpect(status().isOk());
-  }
-
-  @Test
-  public void numberDoubler_withoutInput_returnsError() throws Exception {
-    mockMvc.perform(get("/doubling")
+  public void greet_withTitleandNoName_returnsNewNoInputError() throws Exception{
+    mockMvc.perform(get("/greeter?title=whatever")
             .contentType(MediaType.APPLICATION_JSON_UTF8))
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
             .andExpect(MockMvcResultMatchers.jsonPath("$.error")
-                    .value("Please provide an input!"))
+            .value("Please provide a name!"))
             .andExpect(status().isOk());
   }
+
+  @Test
+  public void greet_withNoTitleandNoName_returnsNewNoInputError() throws Exception{
+    mockMvc.perform(get("/greeter")
+            .contentType(MediaType.APPLICATION_JSON_UTF8))
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.error")
+                    .value("Please provide a name and a title!"))
+            .andExpect(status().isOk());
+  }
+
+  @Test
+  public void greet_withtitleandname_returnsGreeting() throws Exception{
+    mockMvc.perform(get("/greeter?name=Tamas&title=student")
+            .contentType(MediaType.APPLICATION_JSON_UTF8))
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.welcome_message")
+                    .value("Oh, hi there Tamas, my dear student!"))
+            .andExpect(status().isOk());
+  }
+
+
 }

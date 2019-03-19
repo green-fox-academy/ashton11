@@ -21,7 +21,7 @@ public class NumberDoubler {
     return received;
   }
 
-  public void setRecieved(Integer recieved) {
-    this.received = recieved;
+  public void setReceived(Integer received) {
+    this.received = received;
   }
 }

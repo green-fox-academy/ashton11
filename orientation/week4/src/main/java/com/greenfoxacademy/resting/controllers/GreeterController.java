@@ -12,7 +12,7 @@ public class GreeterController {
   @GetMapping("/greeter")
   public Object greet(@RequestParam( value = "name", required = false) String name,
                       @RequestParam(value = "title", required = false) String title){
-    if(name == null&&title == null) {
+    if(name == null && title == null) {
       return new NoInputError("Please provide a name and a title!");
     }else if (name == null) {
       return new NoInputError("Please provide a name!");
